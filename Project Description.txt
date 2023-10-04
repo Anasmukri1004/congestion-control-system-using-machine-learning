@@ -1,0 +1,22 @@
+Now days we are in faster time zone. This can be growing very faster as per the early days. 
+The technology as well as populations are also increasing day by day. According to the largest 
+populations the government wants manage or develop the roads, because in the largest 
+population’s country the traffic is the biggest issues to be face by traffic officers. But 
+sometimes single officers can’t handle the larger traffic especially on festival days. Therefore 
+we are research on those situations. How to manage the traffic automatically? Another situation 
+is while in larger traffic how to cross the ambulance from that traffic. So this project will help
+us to solve those entire problems about larger traffic. After all the research the new technology 
+is highlighted i.e. Machine Learning (ML). We have use some algorithms, dataset and 
+mathematical calculations which can be done by machine learning and python. The python 
+programming language provides a platform to do some operations like object detection, image 
+processing, video processing and so on. We have designed some algorithms which can handles 
+larger traffic. Also this project has second proposed a method for helmet detection and license 
+plate recognition to detect and identify the two-wheeler riders without helmet and thereby 
+penalizing them. Object detection using YOLOv3 is the main concept involved. Object 
+detection is performed at different levels to identify the helmet law violator and their license 
+plate number. Using a License Plate Recognition API, the license plate number is then 
+extracted. A database is maintained that consists of details of two-wheeler owners. An email 
+consisting of violation details and a link to pay the penalty is sent to the helmet law violators. 
+An interface is developed using Tkinter that can be used by the administrative officer to check 
+for violators in the videos provided as input and also to monitor the entire process.
+Keywords: AlexNet, Machine Learning, Python, TensorFlow, YOLO.
