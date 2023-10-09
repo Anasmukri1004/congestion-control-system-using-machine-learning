@@ -208,47 +208,47 @@ class Toplevel1:
                         self.Lane_Four_Result[0][1],
                     )
 
-                    Lan_One_AM = False
-                    Lan_Two_AM = False
-                    Lan_Three_AM = False
-                    Lan_Four_AM = False
+                    Lane_One_AM = False
+                    Lane_Two_AM = False
+                    Lane_Three_AM = False
+                    Lane_Four_AM = False
 
                     if self.Lane_One_Result[1] == 'Emergency_Vehicles':
-                        Lan_One_AM = True
+                        Lane_One_AM = True
                     if self.Lane_Two_Result[1] == 'Emergency_Vehicles':
-                        Lan_Two_AM = True
+                        Lane_Two_AM = True
                     if self.Lane_Three_Result[1] == 'Emergency_Vehicles':
-                        Lan_Three_AM = True
+                        Lane_Three_AM = True
                     if self.Lane_Four_Result[1] == 'Emergency_Vehicles':
-                        Lan_Four_AM = True
+                        Lane_Four_AM = True
 
                     priority = {}
                     priority_set_for = []
                     priority_do_not_set_for = [1,2,3,4]
 
                     Ambulance_count = 0
-                    if Lan_One_AM:
+                    if Lane_One_AM:
                         priority_set_for.append(1)
                         priority_do_not_set_for.remove(1)
                         time_req.pop(0)
                         Ambulance_count = Ambulance_count + 1
                         priority['Lane 1'] = len(priority) + 1
 
-                    if Lan_Two_AM:
+                    if Lane_Two_AM:
                         priority_set_for.append(2)
                         priority_do_not_set_for.remove(2)
                         time_req.pop(Ambulance_count - 1)
                         Ambulance_count = Ambulance_count + 1
                         priority['Lane 2'] = len(priority) + 1
 
-                    if Lan_Three_AM:
+                    if Lane_Three_AM:
                         priority_set_for.append(3)
                         priority_do_not_set_for.remove(3)
                         time_req.pop(Ambulance_count - 2)
                         Ambulance_count = Ambulance_count + 1
                         priority['Lane 3'] = len(priority) + 1
 
-                    if Lan_Four_AM:
+                    if Lane_Four_AM:
                         priority_set_for.append(4)
                         priority_do_not_set_for.remove(4)
                         time_req.pop(Ambulance_count - 3)
@@ -270,24 +270,24 @@ class Toplevel1:
                     # print(temp_time_req)
                     # print(str(temp_time_req[0]))
 
-                    if Lan_One_AM:
+                    if Lane_One_AM:
                         lane__one_text = 'Lane 1,  P: '+str(priority.get('Lane 1'))+ ',   TV : '+ str(self.Lane_One_Result[0][1]) +' ,   EV : 1,    ETR : '+str(int(temp_time_req[0]))+' Sec'
                     else:
                         lane__one_text = 'Lane 1,  P: '+str(priority.get('Lane 1'))+ ',   TV : '+ str(self.Lane_One_Result[0][1]) +' ,   EV : 0,    ETR : '+str(int(temp_time_req[0]))+' Sec'
 
-                    if Lan_Two_AM:
+                    if Lane_Two_AM:
                         lane__two_text = 'Lane 2,  P: '+str(priority.get('Lane 2'))+ ',   TV : '+ str(self.Lane_Two_Result[0][1]) +' ,   EV : 1,    ETR : '+str(int(temp_time_req[1]))+' Sec'
                     else:
                         lane__two_text = 'Lane 2,  P: '+str(priority.get('Lane 2'))+ ',   TV : '+ str(self.Lane_Two_Result[0][1]) +' ,   EV : 0,    ETR : '+str(int(temp_time_req[1]))+' Sec'
 
 
-                    if Lan_Three_AM:
+                    if Lane_Three_AM:
                         lane__Three_text = 'Lane 3,  P: '+str(priority.get('Lane 3'))+ ',   TV : '+ str(self.Lane_Three_Result[0][1]) +' ,   EV : 1,    ETR : '+str(int(temp_time_req[2]))+' Sec'
                     else:
                         lane__Three_text = 'Lane 3,  P: '+str(priority.get('Lane 3'))+ ',   TV : '+ str(self.Lane_Three_Result[0][1]) +' ,   EV : 0,    ETR : '+str(int(temp_time_req[2]))+' Sec'
 
 
-                    if Lan_Four_AM:
+                    if Lane_Four_AM:
                         lane__Four_text = 'Lane 4,  P: '+str(priority.get('Lane 4'))+ ',   TV : '+ str(self.Lane_Four_Result[0][1]) +' ,   EV : 1,    ETR : '+str(int(temp_time_req[3])) +' Sec'
                     else:
                         lane__Four_text = 'Lane 4,  P: '+str(priority.get('Lane 4'))+ ',   TV : '+ str(self.Lane_Four_Result[0][1]) +' ,   EV : 0,    ETR : '+str(int(temp_time_req[3]))+' Sec'
@@ -344,18 +344,18 @@ class Toplevel1:
 
         def btnCalculateResult(event):
             if (self.LaneOneVideoPath == None):
-                messagebox.showerror('Lan 1 Missing', 'No Media Found at Lan 1')
+                messagebox.showerror('Lan 1 Missing', 'No Media Found at Lane 1')
                 return
             if (self.LaneTwoVideoPath == None):
-                messagebox.showerror('Lan 2 Missing', 'No Media Found at Lan 2')
+                messagebox.showerror('Lan 2 Missing', 'No Media Found at Lane 2')
                 return
 
             if (self.LaneThreeVideoPath == None):
-                messagebox.showerror('Lan 3 Missing', 'No Media Found at Lan 3')
+                messagebox.showerror('Lan 3 Missing', 'No Media Found at Lane 3')
                 return
 
             if (self.LaneFourVideoPath == None):
-                messagebox.showerror('Lan 4 Missing', 'No Media Found at Lan 4')
+                messagebox.showerror('Lan 4 Missing', 'No Media Found at Lane 4')
                 return
 
             threading.Thread(target=ProcessLanOneVideo).start()
